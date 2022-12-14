@@ -19,24 +19,18 @@ const config = {
     },
     module: {
         rules: [
+            {   
+                test: /\.(js)$/i,
+                loader: 'babel-loader',
+                exclude: ['/node_modules/'],
+                include: path.resolve(__dirname, "./src/"), // 只解析 src 目录下的文件
+            },
             {
                 test: /\.(ts|tsx)$/i,
                 loader: 'ts-loader',
                 exclude: ['/node_modules/'],
                 include: path.resolve(__dirname, "./src/"), // 只解析 src 目录下的文件
             },
-            // {
-            //     test: /\.css$/i,
-            //     use: [stylesHandler, 'css-loader'],
-            // },
-            // {
-            //     test: /\.less$/i,
-            //     use: [stylesHandler, 'css-loader', 'less-loader'],
-            // },
-            // {
-            //     test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-            //     type: 'asset',
-            // },
         ],
     },
     resolve: {
