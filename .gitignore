@@ -16,4 +16,5 @@ typings/
 .env
 .env.test
 
-build
+lib
+types

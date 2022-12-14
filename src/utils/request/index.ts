@@ -1,4 +1,8 @@
-const request = (value: any) => {
+interface requestType {
+    name:string
+}
+
+const request = (parms: requestType) => {
     console.log("bamboos.request")
 }
 

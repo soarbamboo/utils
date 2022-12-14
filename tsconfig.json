@@ -32,7 +32,7 @@
 
       "declaration":true, // 生成d.ts
       "sourceMap": true,
-      "declarationDir": "build/types/" // 指定类型声明文件的文件夹
+      "declarationDir": "types/" // 指定类型声明文件的文件夹
     },
       // 指定需要排除的无需生成类型声明的相关文件
   "exclude": [
