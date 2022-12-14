@@ -3,11 +3,10 @@
 
 const path = require('path');
 const isProduction = process.env.NODE_ENV == 'production';
-const stylesHandler = 'style-loader';
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const config = {
     entry: {
-        index: ["./src/utils/index.tsx"]
+        index: ["./src/utils/index.tsx"],
     },
     output: {
         filename: '[name].js', // 输出的文件名
@@ -16,10 +15,12 @@ const config = {
         globalObject: "this", // 适配 Node.js
         libraryTarget: "umd", // umd 打包规范
         libraryExport: "default",
+        umdNamedDefine: true,
+        // clean:true
     },
     module: {
         rules: [
-            {   
+            {
                 test: /\.(js)$/i,
                 loader: 'babel-loader',
                 exclude: ['/node_modules/'],
@@ -27,14 +28,19 @@ const config = {
             },
             {
                 test: /\.(ts|tsx)$/i,
-                loader: 'ts-loader',
-                exclude: ['/node_modules/'],
+                use: [
+                    {
+                      loader: 'babel-loader'
+                    },
+                    { loader: 'ts-loader' }
+                ],
+                exclude: /node_modules/,
                 include: path.resolve(__dirname, "./src/"), // 只解析 src 目录下的文件
             },
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
+        extensions: ['.tsx', '.ts', '.jsx', '.js'],
     },
     plugins: [new CleanWebpackPlugin()],
 };

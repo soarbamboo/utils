@@ -9,11 +9,17 @@ node_modules/
 typings/
 
 # Optional npm cache directory
-.npm
+.npmignore
 
 
 # dotenv environment variables file
 .env
 .env.test
 
-build
+.*
+**/tsconfig.json
+**/webpack.config.js
+node_modules
+src/
+tsconfig.json
+webpack.config.js
