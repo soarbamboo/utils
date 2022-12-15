@@ -1,7 +1,7 @@
 import request from './request/index';
 
 const Utils = {
-    request
+    // request
 }
 export default Utils
-export { request }
+// export { request }

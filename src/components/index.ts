@@ -5,4 +5,7 @@ const Ui = {
     Test
 }
 export default Ui
-export { }
+export {
+    Button,
+    Test
+}

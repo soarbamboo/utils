@@ -1,12 +1,13 @@
 {
   "name": "@bamboos/utils",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.15",
   "description": "bamboos tools ",
-  "main": "lib/index.js",
+  "main": "index.js",
   "types": "types/index.d.ts",
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
-    "build:dev": "webpack --mode=development"
+    "build:dev": "webpack --mode=development",
+    "prepublish": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.6",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",
     "webpack": "^5.75.0",

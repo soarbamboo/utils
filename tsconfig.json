@@ -1,4 +1,5 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
     // 基本配置
     "target": "ES2015", // 编译成哪个版本的 es
@@ -6,8 +7,12 @@
     "lib": [
       "es5",
       "dom",
-    ], // 编译过程中需要引入的库文件的列表
-    "allowJs": true, // 允许编译 js 文件
+    ],
+    "types": [
+      "node"
+    ],
+    // 编译过程中需要引入的库文件的列表
+    "allowJs": false, // 允许编译 js 文件
     "jsx": "react", // 在 .tsx 文件里支持 JSX
     // "isolatedModules": true,
     "strict": true, // 启用所有严格类型检查选项
@@ -26,9 +31,11 @@
     "noEmit": false, // 只想使用tsc的类型检查作为函数时（当其他工具（例如Babel实际编译）时）使用它
     "noImplicitAny": false,
     "useDefineForClassFields": true,
+    //
     "declaration": true, // 生成d.ts
     "sourceMap": true,
-    "declarationDir": "types/" // 指定类型声明文件的文件夹
+    "declarationDir": "types/", // 指定类型声明文件的文件夹
+    "declarationMap": false,
   },
   // 指定需要排除的无需生成类型声明的相关文件
   "exclude": [
@@ -37,5 +44,8 @@
   ],
   "include": [
     "./src/utils/*"
+  ],
+  "files": [
+    "./src/index.ts"
   ]
 }

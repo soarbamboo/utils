@@ -3,11 +3,13 @@
 const path = require("path");
 const isProduction = process.env.NODE_ENV == "production";
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const config = {
   // 根据环境变量决定 mode 的值
   mode: isProduction ? "production" : "development",
   entry: {
     index: "./src/index.ts",
+    "index.min": "./src/index.ts",
   },
   output: {
     filename: "[name].js", // 输出的文件名
@@ -42,8 +44,18 @@ const config = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.less$/,
-        use: ["style-loader", "css-loader", "less-loader"],
+        test: /.less$/,
+        use: [
+          {
+            loader: "style-loader",
+            // options: {
+            //   insert: "top", // 将样式插入到<head>
+            //   injectType: "singletonStyleTag", // 将所有的style标签合并成一个
+            // },
+          },
+          "css-loader",
+          "less-loader",
+        ],
       },
     ],
   },
@@ -64,6 +76,15 @@ const config = {
       amd: "react-dom",
       root: "ReactDOM",
     },
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        // 使用压缩插件
+        include: /\.min\.js$/,
+      }),
+    ],
   },
 };
 

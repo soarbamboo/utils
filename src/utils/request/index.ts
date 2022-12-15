@@ -33,8 +33,8 @@ export const createAxiosByinterceptors = (
             const { code, data, message } = response.data;
             if (code === 200) return data;
             else if (code === 401) {
-                if(config?.loginUrl){
-                    window.location.href = `${config?.loginUrl}?redirect=${encodeURIComponent(window.location.href)}`
+                if (config?.loginUrl) {
+
                 }
                 return Promise.resolve(response.data);
             } else {
@@ -49,8 +49,8 @@ export const createAxiosByinterceptors = (
             console.log("error-request:", error.request);
             if (error.response) {
                 if (error.response.status === 401) {
-                    window.location.href = `${config?.loginUrl}?redirect=${encodeURIComponent(window.location.href)}`
-                }   
+
+                }
                 return Promise.reject(error);
             }
             // Message.error(error?.response?.data?.message || "服务端异常");
