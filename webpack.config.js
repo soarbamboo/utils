@@ -7,8 +7,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const config = {
     entry: {
         index: "./src/index.ts",
-        utils: "./src/utils/index.ts",
-        ui:"./src/components/index.ts"
+        Utils: "./src/utils/index.ts",
+        Ui:"./src/components/index.ts"
     },
     output: {
         filename: '[name].js', // 输出的文件名
@@ -18,7 +18,6 @@ const config = {
         libraryTarget: "umd", // umd 打包规范
         libraryExport: "default",
         umdNamedDefine: true,
-        // clean:true
     },
     module: {
         rules: [
