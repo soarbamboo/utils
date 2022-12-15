@@ -1,5 +1,7 @@
 import request from './request/index';
 
-export default {
+const Utils = {
     request
 }
+export default Utils
+export { request }
