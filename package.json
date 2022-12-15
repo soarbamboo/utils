@@ -24,7 +24,8 @@
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
-    "@webpack-cli/generators": "^3.0.1",
+    "@bamboos/eslint-config": "^1.0.1",
+    "axios": "^1.2.1",
     "babel-loader": "^9.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "ts-loader": "^9.4.2",
@@ -32,8 +33,5 @@
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-merge": "^5.8.0"
-  },
-  "dependencies": {
-    "@bamboos/eslint-config": "^1.0.1"
   }
 }
