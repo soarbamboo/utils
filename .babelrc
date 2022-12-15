@@ -1,6 +1,7 @@
 {
-    // 增加ES6 的babel presets配置  
-    "presets": [
-      "@babel/preset-env"
-    ]
-  }
+  // 增加ES6 的babel presets配置  
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ]
+}
