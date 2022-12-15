@@ -2,7 +2,7 @@
   "name": "@bamboos/utils",
   "version": "1.0.0-beta.4",
   "description": "bamboos tools ",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "types": "types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
