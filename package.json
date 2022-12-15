@@ -1,14 +1,12 @@
 {
   "name": "@bamboos/utils",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "description": "bamboos tools ",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=production --node-env=production ",
-    "build:dev": "webpack --mode=development  ",
-    "watch": "webpack --watch"
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
