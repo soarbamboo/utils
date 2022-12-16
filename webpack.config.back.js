@@ -33,8 +33,7 @@ const config = {
         use: [
           {
             loader: "babel-loader",
-          },
-          { loader: "ts-loader" },
+          }
         ],
         exclude: /node_modules/,
         include: path.resolve(__dirname, "./src/"), // 只解析 src 目录下的文件
